@@ -4,10 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//二叉排序树需要一个比较函数
-//那么就需要定义一个比较函数
-//哈希表中的一个元素，因为是用二叉排序树实现的，所以定义一个header里面包含key和左右子树
-//value是值的地址？
 typedef struct _tag_HashNode HashNode;
 struct _tag_HashNode {
   BSTreeNode header;
@@ -39,8 +35,6 @@ void Hash_Clear(Hash* hash) {
   BSTree_Clear(hash);
 }
 
-//Hash_Add不用做合法性判断是因为BSTree_Insert这个函数已经做了合法性判断了
-//这个哈希表是在二叉排序树的基础上实现的，所以要将HashNode插入的二叉排序树中
 int Hash_Add(Hash* hash, HashKey* key, HashValue* value, Hash_Compare* compare) {
   int ret = 0;
   HashNode* node = (HashNode*)malloc(sizeof(HashNode));
