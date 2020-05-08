@@ -1,13 +1,6 @@
 #ifndef _BSTREE_H_
 #define _BSTREE_H_
 
-/**
- * 1、插入和删除都需要根据key值去删除
- * 但是这个key值是int还是什么类型交由使用者决定，所以做一个数据封装定义为void
- * 2、但是插入和删除，获取都要比较，那么需要通过一个比较函数通过key(可以使任意类型)值
- * 如果key值是int只需要比较大小，但是字符串如何比较，这时就需要一个比较函数
-*/
-
 typedef void BSTree;
 typedef void BSKey;  //
 
